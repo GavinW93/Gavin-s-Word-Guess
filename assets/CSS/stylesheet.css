@@ -1,0 +1,19 @@
+body{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 50px;
+}
+
+
+.sidebar {
+    padding: 5px;
+    position: relative;
+    border-top: solid red 2px;
+    border-bottom: solid red 2px;
+    margin-bottom: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;}
+#currentWord {
+        letter-spacing: 10px;
+    }
