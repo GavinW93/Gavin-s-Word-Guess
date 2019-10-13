@@ -1,4 +1,37 @@
-// Set the date we're counting down to
+var counter = {};
+window.addEventListener("load", function () {
+  // COUNTDOWN IN SECONDS
+  // EXAMPLE - 5 MINS = 5 X 60 = 300 SECS
+  counter.end = 300;
+
+  // Get the containers
+  counter.min = document.getElementById("cd-min");
+  counter.sec = document.getElementById("cd-sec");
+
+  // Start if not past end date 
+  if (counter.end > 0) {
+    counter.ticker = setInterval(function(){
+      // Stop if passed end time
+      counter.end--;
+      if (counter.remain <= 0) { resetGame(); }
+
+      // Calculate remaining time
+      var secs = counter.end;
+      var mins  = Math.floor(secs / 60); // 1 min = 60 secs
+      secs -= mins * 60;
+
+      // Update HTML
+      counter.min.innerHTML = mins;
+      counter.sec.innerHTML = secs;
+    }, 1000);
+  }
+});
+
+
+
+
+
+/*// Set the date we're counting down to
 var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
 
 // Update the count down every 1 second
@@ -24,7 +57,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
-
+*/
 /*var $ = function (id) {
     return document.getElementById(id);
     var words= ["moses", "david", "Jesus", "Abraham"];
@@ -67,7 +100,7 @@ $(document).ready(function() {
   var EpossibleWords = ["jesus", "moses", "abraham","issac","daniel"]
   var HpossibleWords = ["Nathan", "Beltashazzar","Zerubabbel","Nebuchadnezzar"]
   var BPpossibleWords = ["Mahershalalhashbaz", "Chushanrishathaim","Zaphnathpaaneah", "Tilgathpilneser","Berodachbaladan" ]
-  var maxGuess = 30
+  var maxGuess = 12
   var pauseGame = false
 
   var guessedLetters = []
@@ -78,23 +111,27 @@ $(document).ready(function() {
   var difficulty = 0
 
   resetGame()
-
+// if the player clicks on easy button then the game will set to easy mode with maximum guess starting at 30
   $("#Easybtn").on("click", function() {
     alert("easy mode has been selected");
     difficulty =0;
-    maxGuess =30;
+    maxGuess =12;
+    counter.end =500;
     resetGame()
   });
+  // if the player clicks on hard button then the game will set to hard mode with maximum guess starting at 15
   $("#Hardbtn").on("click", function() {
     alert("hard mode has been selected");
     difficulty =1;
-    maxGuess =15;
+    maxGuess =10;
+    counter.end =400;
     resetGame()
   });
   $("#BPbtn").on("click", function() {
     alert("bibical proportion mode has been selected");
     difficulty =2;
-    maxGuess =10;
+    maxGuess =8;
+    counter.end =200;
     resetGame()
   });
 
@@ -134,13 +171,14 @@ $(document).ready(function() {
 
       if (!foundLetter) {
           incorrectSound.play()
+          
           // Check if inccorrect guess is already on the list
           if (!guessedLetters.includes(letter)) {
               // Add incorrect letter to guessed letter list
               guessedLetters.push(letter)
               // Decrement the number of remaining guesses
               numGuess--
-              minutes--
+              //minutes--
           }
           if (numGuess === 0) {
               // Display word before reseting game
