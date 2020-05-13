@@ -15,4 +15,4 @@ Gavin's word guess game is a word trivia game where users can guess
 
 **Available link**
 
- https://gavinw93.github.io/Gavin-s-Word-Guess/.
+ https://gavinw93.github.io/Gavin-s-Word-Guess/
