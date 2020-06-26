@@ -133,7 +133,7 @@ $(document).ready(function() {
   function isAlpha (ch){
       return /^[A-Z]$/i.test(ch);
   }
-
+//reset the current game.
   function resetGame() {
       numGuess = maxGuess
       pauseGame = false
