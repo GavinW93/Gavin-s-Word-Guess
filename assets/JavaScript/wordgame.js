@@ -106,7 +106,7 @@ $(document).ready(function() {
               }
           }
       }
-
+// if the letter is not found then play wrong sound
       if (!foundLetter) {
           incorrectSound.play()
           
