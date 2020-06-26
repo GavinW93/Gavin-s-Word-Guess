@@ -64,6 +64,7 @@ $(document).ready(function() {
     counter.end =400;
     resetGame()
   });
+  //if the player click biblical proportions mode
   $("#BPbtn").on("click", function() {
     alert("bibical proportion mode has been selected");
     difficulty =2;
