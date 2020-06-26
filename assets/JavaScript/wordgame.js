@@ -13,7 +13,10 @@ window.addEventListener("load", function () {
     counter.ticker = setInterval(function(){
       // Stop if passed end time
       counter.end--;
-      if (counter.remain <= 0) { resetGame(); }
+      if (counter.remain <= 0) {
+        counter.min.innerHTML = "done";
+        counter.sec.innerHTML = "done";
+        }
 
       // Calculate remaining time
       var secs = counter.end;
@@ -29,72 +32,6 @@ window.addEventListener("load", function () {
 
 
 
-
-
-/*// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-*/
-/*var $ = function (id) {
-    return document.getElementById(id);
-    var words= ["moses", "david", "Jesus", "Abraham"];
-    var randomWord = "";
-    var lettersOfWord = []
-    var blanks = 0;
-    var blanksAndCorrect = [];
-    var wrongGuess = [];
-    return document.getElementById(words);
-    // declare the var and array
-  
-    $(document).ready(function() {
-
-      var possibleWords = ["moses", "david", "madrid", "rome", "singapore", "dubai", "new york city", 
-                              "shanghai", "london", "tokyo", "sydney", "toronto", "beijing", "moscow",
-                              "johannesburg", "istanbul", "warsaw", "jakarta", "kuala lumpur", "mexico city",
-                              "hong kong", "chicago", "seoul", "los angeles", "mumbai"]
-  
-                              const maxGuess = 10
-                              var pauseGame = false
-                          
-                              var guessedLetters = []
-                              var guessingWord = []
-                              var wordToMatch
-                              var numGuess
-                              var wins = 0
-                              
-
-// Wait for key press
-document.onkeypress = function(event) {
-  // Make sure key pressed is an alpha character
-  if (isAlpha(event.key) && !pauseGame) {
-      checkForLetter(event.key.toUpperCase())
-  }
-                            } 
-
-})*/
 $(document).ready(function() {
 
   var EpossibleWords = ["jesus", "moses", "abraham","issac","daniel"]

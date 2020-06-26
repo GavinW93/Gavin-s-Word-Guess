@@ -1,9 +1,11 @@
 body{
-    background-image: url(wp2107965.jpg);
+    background: url("wp2107965.jpg");
+    
     margin: auto;
     width: 50%;
     border: 3px solid green;
     padding: 50px;
+  
 }
 
 
